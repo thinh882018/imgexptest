@@ -9,7 +9,7 @@ describe('Sprint 3 Test', () => {
         cy.get('body > app-root > app-home > app-header > div > header > a.btn.btn-danger.rounded-pill.sign-in').click()
         cy.get('#sign-in-btn').click();
         cy.get('#signInEmail').type('test@gmail.com')
-        cy.get('#signInPassword').type('AbCd!232')
+        cy.get('#signInPassword').type('AbCd!232', {force:true})
         // Click SIGN UP button to submit
         cy.get('#signInSubmit').click({force:true})
          // click nut 
@@ -34,10 +34,10 @@ describe('Sprint 3 Test', () => {
         //Visit the imgexp site
         cy.visit('http://imgexp.herokuapp.com')
         // Click Sign-in button
-       /* cy.get('body > app-root > app-home > app-header > div > header > a.btn.btn-danger.rounded-pill.sign-in').click()
+        cy.get('body > app-root > app-home > app-header > div > header > a.btn.btn-danger.rounded-pill.sign-in').click()
         cy.get('#sign-in-btn').click();
-        cy.get('#signInEmail').type('')
-        cy.get('#signInPassword').type('123456789')*/
+        cy.get('#signInEmail').type('test@gmail.com')
+        cy.get('#signInPassword').type('AbCd!232', {force:true})
         // Click SIGN UP button to submit
         //cy.get('#signInSubmit').click({force:true})
          // click nut 
@@ -65,12 +65,12 @@ describe('Sprint 3 Test', () => {
         //Visit the imgexp site
         cy.visit('http://imgexp.herokuapp.com')
         // Click Sign-in button
-       /* cy.get('body > app-root > app-home > app-header > div > header > a.btn.btn-danger.rounded-pill.sign-in').click()
+        cy.get('body > app-root > app-home > app-header > div > header > a.btn.btn-danger.rounded-pill.sign-in').click()
         cy.get('#sign-in-btn').click();
-        cy.get('#signInEmail').type('thinh12345@gmail.com')
-        cy.get('#signInPassword').type('123456789')
+        cy.get('#signInEmail').type('test@gmail.com')
+        cy.get('#signInPassword').type('AbCd!232', {force:true})
         // Click SIGN UP button to submit
-        cy.get('#signInSubmit').click({force:true})*/
+        cy.get('#signInSubmit').click({force:true})
          // click nut 
         cy.get('body > app-root > app-home > app-header > div > header > div.btn-group.drop-menu.btn-sm.ng-star-inserted.dropdown > button > i').click()
         // Click settings
