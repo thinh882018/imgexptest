@@ -25,7 +25,8 @@ describe('Sprint 3 Test', () => {
         // CHECK RESULTS
         // Check that error message is NOT being output
         cy.contains('Your name is at most 50 characters').should('exist', {setTimeout: 600000})
-       
+        cy.get('body > app-root > app-home > app-header > div > header > div.btn-group.drop-menu.btn-sm.ng-star-inserted.show.dropdown > button > i').click()
+        cy.get('body > app-root > app-home > app-header > div > header > div.btn-group.drop-menu.btn-sm.ng-star-inserted.show.dropdown > ul > li:nth-child(3) > a').click()
     })
 
     it(' Change name_ 02 - Verify that input  tags are required', () => {
@@ -52,6 +53,10 @@ describe('Sprint 3 Test', () => {
         // CHECK RESULTS
         // Check that error message is NOT being output
         cy.contains('Username is required').should('exist', {setTimeout: 600000})
+        // click nut
+        cy.get('body > app-root > app-home > app-header > div > header > div.btn-group.drop-menu.btn-sm.ng-star-inserted.show.dropdown > button > i').click()
+        //click sign out
+        cy.get('body > app-root > app-home > app-header > div > header > div.btn-group.drop-menu.btn-sm.ng-star-inserted.show.dropdown > ul > li:nth-child(3) > a').click()
        
     })
 
@@ -76,6 +81,8 @@ describe('Sprint 3 Test', () => {
         cy.get('body > app-root > app-user-profile > div > div > div > form > div.input-field.error-box > input').type('thịnh')
         // click save
         cy.get('body > app-root > app-user-profile > div > div > div > form > input').click({force:true})   
+        cy.get('body > app-root > app-home > app-header > div > header > div.btn-group.drop-menu.btn-sm.ng-star-inserted.show.dropdown > button > i').click()
+        cy.get('body > app-root > app-home > app-header > div > header > div.btn-group.drop-menu.btn-sm.ng-star-inserted.show.dropdown > ul > li:nth-child(3) > a').click()
     })
 
 })

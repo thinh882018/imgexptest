@@ -11,11 +11,14 @@ describe('Sprint 3 Test', () => {
         cy.get('#signInEmail').type('test@gmail.com')
         cy.get('#signInPassword').type('AbCd!232')
         // Click SIGN UP button to submit
-        cy.get('#signInSubmit').click({force:true}, {setTimeout: 600000} )
-
-        cy.get('body > app-root > app-home > app-header > div > header > div.btn-group.drop-menu.btn-sm.ng-star-inserted.dropdown > button > i').click()
+        cy.get('#signInSubmit').click({force:true}, {setTimeout: 60000000} )
+        //  click nut 
+        cy.get('body > app-root > app-home > app-header > div > header > div.btn-group.drop-menu.btn-sm.ng-star-inserted.dropdown > button > i').click( {setTimeout: 6000000})
+        // Click settings
         cy.get('body > app-root > app-home > app-header > div > header > div.btn-group.drop-menu.btn-sm.ng-star-inserted.show.dropdown > ul > li:nth-child(1) > a').click()
+        // Click edit profile
         cy.get('body > app-root > app-user-profile > div > app-settings > p-tabmenu > div > ul > li:nth-child(2) > a > span.p-menuitem-text.ng-star-inserted').click()
+        //Change password
         cy.get('body > app-root > app-change-password > div > div > div > form > div:nth-child(3) > p-password > div > input').type('AbCd!232', {force:true})
         cy.get('body > app-root > app-change-password > div > div > div > form > div.input-field.error-box > p-password > div > input').type('abcd!232', {force:true})
         cy.get('body > app-root > app-change-password > div > div > div > form > div:nth-child(5) > p-password > div > input').type('abcd!232', {force:true})
@@ -23,7 +26,8 @@ describe('Sprint 3 Test', () => {
         // CHECK RESULTS
         // Check that error message is NOT being output
         cy.contains('Password is incorrect').should('exist', {setTimeout: 600000})
-
+        cy.get('body > app-root > app-home > app-header > div > header > div.btn-group.drop-menu.btn-sm.ng-star-inserted.show.dropdown > button > i').click()
+        cy.get('body > app-root > app-home > app-header > div > header > div.btn-group.drop-menu.btn-sm.ng-star-inserted.show.dropdown > ul > li:nth-child(3) > a').click()
     })
 
     it(' Change password_02 - Verify that input tags are required', () => {
@@ -44,6 +48,8 @@ describe('Sprint 3 Test', () => {
         // CHECK RESULTS
         // Check that error message is NOT being output
         cy.contains('is required').should('exist', {setTimeout: 600000})
+        cy.get('body > app-root > app-home > app-header > div > header > div.btn-group.drop-menu.btn-sm.ng-star-inserted.show.dropdown > button > i').click()
+        cy.get('body > app-root > app-home > app-header > div > header > div.btn-group.drop-menu.btn-sm.ng-star-inserted.show.dropdown > ul > li:nth-child(3) > a').click()
     })
 
     it(' Change password_03- Verify that "Confirm Password" needs to be the same as "New Password"', () => {
@@ -67,6 +73,8 @@ describe('Sprint 3 Test', () => {
         // CHECK RESULTS
         // Check that error message is NOT being output
         cy.contains('New repassword is not match with new password').should('exist', {setTimeout: 600000})
+        cy.get('body > app-root > app-home > app-header > div > header > div.btn-group.drop-menu.btn-sm.ng-star-inserted.show.dropdown > button > i').click()
+        cy.get('body > app-root > app-home > app-header > div > header > div.btn-group.drop-menu.btn-sm.ng-star-inserted.show.dropdown > ul > li:nth-child(3) > a').click()
 
     })
 
@@ -89,12 +97,18 @@ describe('Sprint 3 Test', () => {
         cy.get('body > app-root > app-user-profile > div > app-settings > p-tabmenu > div > ul > li:nth-child(2) > a > span.p-menuitem-text.ng-star-inserted').click()
         // change-password
         cy.get('body > app-root > app-change-password > div > div > div > form > div:nth-child(3) > p-password > div > input').type('AbCd!232', {force:true})
+        //click change-password
         cy.get('body > app-root > app-change-password > div > div > div > form > div.input-field.error-box > p-password > div > input').type('admin1111111111111111111111111111111111111111111111111111111', {force:true})
+        // click 
         cy.get('body > app-root > app-change-password > div > div > div > form > div:nth-child(5) > p-password > div > input').type('admin1111111111111111111111111111111111111111111111111111111', {force:true})
         cy.get('body > app-root > app-change-password > div > div > div > form > input').click({force:true})
         // CHECK RESULTS
         // Check that error message is NOT being output
         cy.contains('Your Password is at most 50 characters').should('exist', {setTimeout: 600000})
+        // click dau muoi ten
+        cy.get('body > app-root > app-home > app-header > div > header > div.btn-group.drop-menu.btn-sm.ng-star-inserted.show.dropdown > button > i').click()
+        //click sign up
+        cy.get('body > app-root > app-home > app-header > div > header > div.btn-group.drop-menu.btn-sm.ng-star-inserted.show.dropdown > ul > li:nth-child(3) > a').click()
     })
 
 
